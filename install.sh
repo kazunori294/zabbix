@@ -29,9 +29,9 @@ mysql -e "CREATE DATABASE zabbix"
 mysql -e "GRANT ALL PRIVILEGES ON zabbix.* TO zabbix@localhost IDENTIFIED BY 'password'"
 mysql -e "FLUSH PRIVILEGES"
 
-mysql -u zabbix -ppassword zabbix < /usr/share/doc/zabbix-server*/create/schema.sql
-mysql -u zabbix -ppassword zabbix < /usr/share/doc/zabbix-server*/create/data.sql
-mysql -u zabbix -ppassword zabbix < /usr/share/doc/zabbix-server*/create/images.sql
+mysql -u zabbix -ppassword zabbix < /usr/share/doc/zabbix-server-mysql-2.2.4/create/schema.sql
+mysql -u zabbix -ppassword zabbix < /usr/share/doc/zabbix-server-mysql-2.2.4/create/data.sql
+mysql -u zabbix -ppassword zabbix < /usr/share/doc/zabbix-server-mysql-2.2.4/create/images.sql
 
 
 #sed -e "s/# DBUser=/DBUser=zabbix/g" /etc/zabbix/zabbix_server.conf > /etc/zabbix/zabbix_server.conf
