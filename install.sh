@@ -20,3 +20,28 @@ log-error=/var/log/mysqld.log
 pid-file=/var/run/mysqld/mysqld.pid
 
 EOF
+
+
+service mysqld start
+chkconfig mysqld on
+
+mysql -e "CREATE DATABASE zabbix"
+mysql -e "GRANT ALL PRIVILEGES ON zabbix.* TO zabbix@localhost IDENTIFIED BY 'password'"
+mysql -e "FLUSH PRIVILEGES"
+
+mysql -u zabbix -ppassword zabbix < /usr/share/doc/zabbix-server-1.8.16/schema/mysql.sql
+mysql -u zabbix -ppassword zabbix < /usr/share/doc/zabbix-server-1.8.16/data/data.sql
+mysql -u zabbix -ppassword zabbix < /usr/share/doc/zabbix-server-1.8.16/data/images_mysql.sql
+
+
+cat << EOF >> /etc/zabbix/zabbix_server.conf
+
+DBUser=zabbix
+EOF
+
+
+service zabbix-server start
+service httpd start 
+chkconfig mysqld on
+chkconfig httpd on
+chkconfig zabbix-server on
