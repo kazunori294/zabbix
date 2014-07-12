@@ -35,7 +35,7 @@ mysql -u zabbix -ppassword zabbix < /usr/share/doc/zabbix-server-1.8.16/data/ima
 
 
 #sed -e "s/# DBUser=/DBUser=zabbix/g" /etc/zabbix/zabbix_server.conf > /etc/zabbix/zabbix_server.conf
-sed -e "s/;date.timezone =/date.timezone = Asia\/Tokyo/g" /etc/php.ini > /etc/php.ini 
+/bin/sed -e "s/;date.timezone =/date.timezone = Asia\/Tokyo/g" /etc/php.ini
 
 service zabbix-server start
 service httpd start 
