@@ -6,7 +6,7 @@ yum install -y zabbix-server-mysql zabbix-web-mysql
 yum install -y zabbix-agent
 
 
-echo << EOF > /etc/my.cnf
+cat << EOF > /etc/my.cnf
 [mysqld]
 datadir=/var/lib/mysql
 socket=/var/lib/mysql/mysql.sock
