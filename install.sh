@@ -22,8 +22,7 @@ pid-file=/var/run/mysqld/mysqld.pid
 EOF
 
 
-service mysqld start
-chkconfig mysqld on
+service mysqld restart
 
 mysql -e "CREATE DATABASE zabbix"
 mysql -e "GRANT ALL PRIVILEGES ON zabbix.* TO zabbix@localhost IDENTIFIED BY 'password'"
@@ -33,12 +32,17 @@ mysql -u zabbix -ppassword zabbix < /usr/share/doc/zabbix-server-mysql-2.2.4/cre
 mysql -u zabbix -ppassword zabbix < /usr/share/doc/zabbix-server-mysql-2.2.4/create/data.sql
 mysql -u zabbix -ppassword zabbix < /usr/share/doc/zabbix-server-mysql-2.2.4/create/images.sql
 
+mysql -u zabbix -ppassword zabbix < /usr/share/doc/zabbix-server-mysql-2.2.4/create/schema.sql
+mysql -u zabbix -ppassword zabbix < /usr/share/doc/zabbix-server-mysql-2.2.4/create/data.sql
+mysql -u zabbix -ppassword zabbix < /usr/share/doc/zabbix-server-mysql-2.2.4/create/images.sql
+
+
 
 #sed -e "s/# DBUser=/DBUser=zabbix/g" /etc/zabbix/zabbix_server.conf > /etc/zabbix/zabbix_server.conf
 sed -i".org" -e "s/;date.timezone =/date.timezone = Asia\/Tokyo/g" /etc/php.ini
 
-service zabbix-server start
-service httpd start 
+service zabbix-server restart
+service httpd restart 
 chkconfig mysqld on
 chkconfig httpd on
 chkconfig zabbix-server on
