@@ -51,3 +51,5 @@ chkconfig httpd on
 chkconfig zabbix-server on
 
 #access to <host>/zabbix
+#DB  zabbix/password
+#GUI admin/zabbix
