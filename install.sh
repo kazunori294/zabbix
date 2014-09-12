@@ -25,7 +25,7 @@ EOF
 service mysqld restart
 
 mysql -e "CREATE DATABASE zabbix"
-mysql -e "GRANT ALL PRIVILEGES ON zabbix.* TO zabbix@localhost IDENTIFIED BY 'password'"
+mysql -e "GRANT ALL PRIVILEGES ON zabbix.* TO zabbix@localhost IDENTIFIED BY 'zabbix'"
 mysql -e "FLUSH PRIVILEGES"
 
 mysql -u zabbix -ppassword zabbix < /usr/share/doc/zabbix-server-mysql-2.2.4/create/schema.sql
