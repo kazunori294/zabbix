@@ -31,13 +31,13 @@ mysql -e "FLUSH PRIVILEGES"
 
 VERSION="2.2.6"
 
-mysql -u zabbix -ppassword zabbix < /usr/share/doc/zabbix-server-mysql-${VERSIION}/create/schema.sql
-mysql -u zabbix -ppassword zabbix < /usr/share/doc/zabbix-server-mysql-${VERSIION}/create/data.sql
-mysql -u zabbix -ppassword zabbix < /usr/share/doc/zabbix-server-mysql-${VERSIION}/create/images.sql
+mysql -u zabbix -ppassword zabbix < /usr/share/doc/zabbix-server-mysql-${VERSION}/create/schema.sql
+mysql -u zabbix -ppassword zabbix < /usr/share/doc/zabbix-server-mysql-${VERSION}/create/data.sql
+mysql -u zabbix -ppassword zabbix < /usr/share/doc/zabbix-server-mysql-${VERSION}/create/images.sql
 
-mysql -u zabbix -ppassword zabbix < /usr/share/doc/zabbix-server-mysql-${VERSIION}/create/schema.sql
-mysql -u zabbix -ppassword zabbix < /usr/share/doc/zabbix-server-mysql-${VERSIION}/create/data.sql
-mysql -u zabbix -ppassword zabbix < /usr/share/doc/zabbix-server-mysql-${VERSIION}/create/images.sql
+mysql -u zabbix -ppassword zabbix < /usr/share/doc/zabbix-server-mysql-${VERSION}/create/schema.sql
+mysql -u zabbix -ppassword zabbix < /usr/share/doc/zabbix-server-mysql-${VERSION}/create/data.sql
+mysql -u zabbix -ppassword zabbix < /usr/share/doc/zabbix-server-mysql-${VERSION}/create/images.sql
 
 
 
