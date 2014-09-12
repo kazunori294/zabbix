@@ -43,6 +43,7 @@ mysql -u zabbix -ppassword zabbix < /usr/share/doc/zabbix-server-mysql-${VERSION
 
 #sed -e "s/# DBUser=/DBUser=zabbix/g" /etc/zabbix/zabbix_server.conf > /etc/zabbix/zabbix_server.conf
 sed -i".org" -e "s/;date.timezone =/date.timezone = Asia\/Tokyo/g" /etc/php.ini
+sed -i".org" -e "s/# DBPassword=/DBPassword=password/g" /etc/zabbix/zabbix_server.conf
 
 service zabbix-server restart
 service httpd restart 
