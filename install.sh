@@ -46,3 +46,5 @@ service httpd restart
 chkconfig mysqld on
 chkconfig httpd on
 chkconfig zabbix-server on
+
+#access to <host>/zabbix
