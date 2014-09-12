@@ -28,13 +28,16 @@ mysql -e "CREATE DATABASE zabbix"
 mysql -e "GRANT ALL PRIVILEGES ON zabbix.* TO zabbix@localhost IDENTIFIED BY 'password'"
 mysql -e "FLUSH PRIVILEGES"
 
-mysql -u zabbix -ppassword zabbix < /usr/share/doc/zabbix-server-mysql-*/create/schema.sql
-mysql -u zabbix -ppassword zabbix < /usr/share/doc/zabbix-server-mysql-*/create/data.sql
-mysql -u zabbix -ppassword zabbix < /usr/share/doc/zabbix-server-mysql-*/create/images.sql
 
-mysql -u zabbix -ppassword zabbix < /usr/share/doc/zabbix-server-mysql-*/create/schema.sql
-mysql -u zabbix -ppassword zabbix < /usr/share/doc/zabbix-server-mysql-*/create/data.sql
-mysql -u zabbix -ppassword zabbix < /usr/share/doc/zabbix-server-mysql-*/create/images.sql
+VERSION="2.2.6"
+
+mysql -u zabbix -ppassword zabbix < /usr/share/doc/zabbix-server-mysql-${VERSIION}/create/schema.sql
+mysql -u zabbix -ppassword zabbix < /usr/share/doc/zabbix-server-mysql-${VERSIION}/create/data.sql
+mysql -u zabbix -ppassword zabbix < /usr/share/doc/zabbix-server-mysql-${VERSIION}/create/images.sql
+
+mysql -u zabbix -ppassword zabbix < /usr/share/doc/zabbix-server-mysql-${VERSIION}/create/schema.sql
+mysql -u zabbix -ppassword zabbix < /usr/share/doc/zabbix-server-mysql-${VERSIION}/create/data.sql
+mysql -u zabbix -ppassword zabbix < /usr/share/doc/zabbix-server-mysql-${VERSIION}/create/images.sql
 
 
 
